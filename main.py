@@ -12,14 +12,20 @@ green = (0, 255, 0)
 blue = (0, 0, 255)
 light_green = (0, 155, 255)
 gray = (119, 118, 110)
-
+gif_surface = pygame.image.load('road.gif')
 car_image = pygame.image.load("car-clipart-sprite-sheet-14.jpg")
 car_image = pygame.transform.scale(car_image, (100, 100))
 bgImg = pygame.image.load("background1.jpg")
 grass = pygame.image.load("download12.jpg")
 enymy = pygame.image.load("enymy.png")
 enymy = pygame.transform.scale(enymy, (100, 100))
-
+screen_info = pygame.display.Info()
+screen_width = screen_info.current_w
+screen_height = screen_info.current_h
+gif_x = 0
+gif_y = 0
+gif_width = screen_width
+gif_height = screen_height
 
 def text(size, mess, x_pos, y_pos):
     font = pygame.font.SysFont(None, size)
@@ -146,6 +152,7 @@ def game_loop():
                     y_change = 0
 
         gd.fill(gray)
+        gd.blit(gif_surface, (gif_x, gif_y, gif_width, gif_height))
         car(x, y,)
         score(count)
         hiscore(hi)
