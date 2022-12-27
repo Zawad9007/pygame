@@ -3,6 +3,7 @@ import time
 import pygame
 
 pygame.init()
+
 clock = pygame.time.Clock()
 gd = pygame.display.set_mode((800, 600))
 white = (255, 255, 255)
@@ -12,7 +13,7 @@ green = (0, 255, 0)
 blue = (0, 0, 255)
 light_green = (0, 155, 255)
 gray = (119, 118, 110)
-gif_surface = pygame.image.load('road.gif')
+gif_surface = pygame.image.load('r.gif')
 car_image = pygame.image.load("car-clipart-sprite-sheet-14.jpg")
 car_image = pygame.transform.scale(car_image, (100, 100))
 bgImg = pygame.image.load("background1.jpg")
@@ -26,6 +27,8 @@ gif_x = 0
 gif_y = 0
 gif_width = screen_width
 gif_height = screen_height
+gif_surface = pygame.transform.scale(gif_surface, (gif_width, gif_height))
+
 
 def text(size, mess, x_pos, y_pos):
     font = pygame.font.SysFont(None, size)
